@@ -298,7 +298,7 @@
       </div>
       <div class="info-box">
         <div class="label">Question Pool</div>
-        <div class="value">320</div>
+        <div class="value">370</div>
       </div>
       <div class="info-box">
         <div class="label">Domains</div>
@@ -376,7 +376,7 @@
 
 <script>
 // =============================================================================
-// QUESTION BANK — 320 Questions across 6 CSA domains
+// QUESTION BANK — 370 Questions across 6 CSA domains
 // Domains: platform_overview | instance_config | collaboration |
 //          self_service | database_security | migration_integration
 // Types: "single" | "multi"
@@ -1701,6 +1701,210 @@ const QUESTIONS = [
 {d:"migration_integration",t:"single",q:"In an onChange Client Script, why is an 'if (isLoading) return;' guard commonly used?",
  o:["To stop the script from running during form load when field values are being initialized","To make the script server-side","To force the form to save before validation","To disable all field changes"],
  a:0, e:"onChange scripts can fire while the form is loading and fields are initialized. The isLoading guard prevents unintended logic during initial load."},
+
+// --- NEW: from Google Docs CSA notes dump (+30) ---
+
+{d:"collaboration",t:"multi",q:"Which 3 context menus are available from a classic ServiceNow list? (Select 3)",
+ o:["List Control Menu","Column Options Menu","Record Context Menu","Application Menu","Dashboard Menu"],
+ a:[0,1,2], e:"Classic lists have three key context menus: List Control Menu, Column Options Menu, and Record Context Menu."},
+
+{d:"collaboration",t:"single",q:"Which classic list context menu contains display and filtering options for the whole list?",
+ o:["Record Context Menu","Column Options Menu","List Control Menu","Form Header Menu"],
+ a:2, e:"The List Control Menu contains display options related to viewing and filtering the whole list."},
+
+{d:"collaboration",t:"single",q:"Which classic list context menu contains options specific to a column, such as reporting, configuring, and export?",
+ o:["Column Options Menu","Record Context Menu","List Control Menu","Application Navigator"],
+ a:0, e:"The Column Options Menu contains actions specific to that column, including reporting, configuration, and export options."},
+
+{d:"collaboration",t:"multi",q:"Which 3 parts make up a ServiceNow filter condition? (Select 3)",
+ o:["Field","Operator","Value","Role","Table ACL"],
+ a:[0,1,2], e:"A filter condition is built from Field, Operator, and Value."},
+
+{d:"collaboration",t:"single",q:"How can you edit a single field value on multiple selected list records in classic lists?",
+ o:["Open each form and update it manually","Click the column header and choose Update Selected","Use the Application Navigator","Use Report Designer"],
+ a:1, e:"After selecting multiple rows, click the column header and choose Update Selected to update one field across selected records."},
+
+{d:"collaboration",t:"multi",q:"Which quick-edit actions can appear from a field/right-click context menu on a classic list? (Select 4)",
+ o:["Assign to me","Assign Tag","Approve","Reject","Run Transform"],
+ a:[0,1,2,3], e:"Common quick-edit actions include Assign to me, Assign Tag, Approve, and Reject where applicable."},
+
+{d:"collaboration",t:"single",q:"Which role is required to configure a list layout for all users by adding, removing, or reordering columns?",
+ o:["personalize_list","itil","report_admin","list_admin"],
+ a:0, e:"The personalize_list role allows list layout configuration for all users."},
+
+{d:"collaboration",t:"single",q:"What does a List Collector let an administrator do when configuring a list layout?",
+ o:["Import external records","Add, remove, and reorder fields in the Selected list","Create a Business Rule","Schedule reports"],
+ a:1, e:"The List Collector is used to add, remove, and reorder list columns in the selected layout."},
+
+{d:"collaboration",t:"single",q:"In list layout configuration, what does dot-walking allow you to do?",
+ o:["Open a record in a new tab","Add fields from related/reference tables to the current list view","Create a new table extension","Export a list to PDF"],
+ a:1, e:"Dot-walking allows fields from related records to be included in the current list or report."},
+
+{d:"collaboration",t:"multi",q:"Which 4 sections are found in Report Designer? (Select 4)",
+ o:["Data","Type","Configure","Style","Security"],
+ a:[0,1,2,3], e:"Report Designer has four major sections: Data, Type, Configure, and Style."},
+
+{d:"collaboration",t:"single",q:"In Report Designer, which section is used to name the report and select the source table or data source?",
+ o:["Type","Configure","Data","Style"],
+ a:2, e:"The Data section is where you name the report and select the source type/source."},
+
+{d:"collaboration",t:"single",q:"In Report Designer, which section is used to choose report format such as bar, pie, or time series?",
+ o:["Data","Type","Configure","Style"],
+ a:1, e:"The Type section controls the report visualization type, such as pie, bar, or time series."},
+
+{d:"collaboration",t:"multi",q:"Which 5 options are available from the report Sharing menu? (Select 5)",
+ o:["Share","Schedule","Export to PDF","Add to Dashboard","Publish","Create ACL"],
+ a:[0,1,2,3,4], e:"The report Sharing menu includes Share, Schedule, Export to PDF, Add to Dashboard, and Publish."},
+
+{d:"collaboration",t:"single",q:"What does the 'Publish' option on a report create?",
+ o:["A duplicate private report","A public URL that can be used to share a copy of the report","A dashboard widget only","A scheduled email subscription"],
+ a:1, e:"Publish creates a public URL to share a copy of the report."},
+
+{d:"collaboration",t:"single",q:"How do you launch Interactive Analysis from a list?",
+ o:["Open System Properties and enable analytics","Use the column options menu and choose Launch Interactive Analysis","Right-click the browser tab","Open the Update Set menu"],
+ a:1, e:"From a list, use the column options menu and choose Launch Interactive Analysis."},
+
+{d:"collaboration",t:"single",q:"In Interactive Analysis, which icon is used to edit the source filter or copy the share link?",
+ o:["Filter Info icon","Paperclip icon","Clock icon","Gear icon"],
+ a:0, e:"The Filter Info icon lets you edit the Source Filter and copy the URL under Share."},
+
+{d:"collaboration",t:"single",q:"How can a dashboard be shared with specific audiences in ServiceNow?",
+ o:["Only by exporting it to PDF","Use the Sharing menu and specify Groups, Users, or Roles with Can View or Can Edit","Only by publishing a public URL","By adding users to the admin role"],
+ a:1, e:"Dashboard sharing uses the Sharing menu to grant Can View or Can Edit access to Groups, Users, or Roles."},
+
+{d:"self_service",t:"single",q:"Which role is required to administer Knowledge Bases?",
+ o:["knowledge_admin","kb_reader","catalog_admin","itil"],
+ a:0, e:"The knowledge_admin role is required to administer Knowledge Bases."},
+
+{d:"self_service",t:"single",q:"What is the navigation path to create or manage Knowledge Bases without Guided Setup?",
+ o:["All > Self-Service > Knowledge","All > Knowledge > Administration > Knowledge Base","All > Service Catalog > Knowledge Bases","All > System Definition > Knowledge"],
+ a:1, e:"Knowledge Bases can be created and managed at All > Knowledge > Administration > Knowledge Base."},
+
+{d:"self_service",t:"multi",q:"Which 4 access outcomes can be managed through Knowledge User Criteria records? (Select 4)",
+ o:["canRead","cantRead","canContribute","cantContribute","canPublish"],
+ a:[0,1,2,3], e:"Knowledge User Criteria records manage canRead, cantRead, canContribute, and cantContribute outcomes."},
+
+{d:"self_service",t:"single",q:"Which system property controls whether logged-in users are blocked from Knowledge Bases that have no user criteria?",
+ o:["glide.knowman.block_access_with_no_user_criteria","glide.knowledge.public_access","glide.kb.user_criteria_required","glide.knowman.enable_user_criteria"],
+ a:0, e:"The property glide.knowman.block_access_with_no_user_criteria controls default access behavior when no user criteria exist."},
+
+{d:"self_service",t:"multi",q:"Which baseline Knowledge workflows are used for publishing and retirement? (Select 4)",
+ o:["Approval Publish","Approval Retire","Instant Publish","Instant Retire","SLA Publish"],
+ a:[0,1,2,3], e:"Baseline Knowledge workflows include Approval Publish, Approval Retire, Instant Publish, and Instant Retire, along with Publish Knowledge and Retire Knowledge."},
+
+{d:"self_service",t:"single",q:"Which path is used to import Word documents into Knowledge articles?",
+ o:["All > Knowledge > Articles > Import Articles","All > Self-Service > Knowledge > Upload Word","All > System Import Sets > Knowledge Import","All > Knowledge > Administration > Import Word"],
+ a:0, e:"Word documents can be imported into Knowledge articles from All > Knowledge > Articles > Import Articles."},
+
+{d:"self_service",t:"multi",q:"Which 3 roles are required to work with Flow Designer according to the study notes? (Select 3)",
+ o:["flow_designer","flow_operator","action_designer","catalog_admin","script_admin"],
+ a:[0,1,2], e:"The notes list flow_designer, flow_operator, and action_designer as the roles required to work with Flow Designer."},
+
+{d:"self_service",t:"multi",q:"Which 5 trigger types are supported in Flow Designer's diagram view? (Select 5)",
+ o:["Record triggers","Date triggers","Inbound email","Service Catalog","SLA Task","Database View"],
+ a:[0,1,2,3,4], e:"Flow Designer supports Record triggers, Date triggers, Inbound email, Service Catalog, and SLA Task trigger types."},
+
+{d:"self_service",t:"multi",q:"Which 4 main components make up a Flow in Flow Designer? (Select 4)",
+ o:["Triggers","Conditions","Actions","Data","Reports"],
+ a:[0,1,2,3], e:"A Flow is made up of Triggers, Conditions, Actions, and Data."},
+
+{d:"self_service",t:"multi",q:"Which Service Core actions are examples of actions available in Flow Designer? (Select 5)",
+ o:["Ask for Approval","Create Record","Delete Record","Look up Record","Wait for Condition","Compile Script"],
+ a:[0,1,2,3,4], e:"Common Service Core actions include Ask for Approval, Create Record, Delete Record, Look up Record, and Wait for Condition."},
+
+{d:"self_service",t:"single",q:"What is the purpose of the Data Pill Picker in Flow Designer?",
+ o:["To choose dashboard colors","To pull data from triggers and prior actions, including dot-walked related data","To install spokes","To create user criteria"],
+ a:1, e:"The Data Pill Picker lets you pull values from triggers and previous steps, including dot-walked related data."},
+
+{d:"collaboration",t:"multi",q:"Which graph sets are available in the ServiceNow Performance Dashboard? (Select 4)",
+ o:["AMB","Database","Instance View","Slow Pattern","Knowledge Base"],
+ a:[0,1,2,3], e:"The notes list available graph sets including AMB, Database, Instance View, MySQL Global Status, ServiceNow Servlet, and Slow Pattern."},
+
+{d:"collaboration",t:"multi",q:"Which stages are part of the basic Change Request process in the study notes? (Select 4)",
+ o:["Creation and Scope","Approval","Implementation","Closure","Retirement"],
+ a:[0,1,2,3], e:"The basic Change Request process includes Creation and Scope, Approval, Implementation, and Closure."},
+
+// --- NEW: scripting 'why' and execution-context scenarios (+20) ---
+
+{d:"migration_integration",t:"single",q:"A user changes the Category field on an Incident form and the Subcategory choices should update immediately before the user saves. Which script type best fits?",
+ o:["onLoad Client Script","onChange Client Script","onSubmit Client Script","After Business Rule"],
+ a:1, e:"Use an onChange Client Script because the behavior must happen in the browser immediately after a specific field changes. An onSubmit script waits until save, and an After Business Rule runs too late on the server."},
+
+{d:"migration_integration",t:"single",q:"A form must block submission if the Short Description is fewer than 10 characters and show the user an immediate message. Which option is best?",
+ o:["onSubmit Client Script","After Business Rule","Async Business Rule","Scheduled Script Execution"],
+ a:0, e:"Use an onSubmit Client Script because the validation happens in the browser at submit time and can prevent the save. Server rules can reject or change data, but they do not give the same immediate pre-submit form experience."},
+
+{d:"migration_integration",t:"single",q:"A value must be set every time an Incident is inserted, including records created by imports and REST API calls. Which option is best?",
+ o:["onLoad Client Script","UI Policy","Before Business Rule","Form Template"],
+ a:2, e:"Use a Before Business Rule because it runs on the server before database write and applies regardless of entry point. Client-side tools only apply to browser form interactions."},
+
+{d:"migration_integration",t:"single",q:"A field should become mandatory only on the browser form when State is Resolved, and no custom logic is needed. Which option is best?",
+ o:["UI Policy","Before Business Rule","Script Include","Async Business Rule"],
+ a:0, e:"Use a UI Policy for declarative client-side field behavior such as mandatory, read-only, and visible. A Business Rule is heavier and server-side; it is better when enforcement must apply outside the form too."},
+
+{d:"migration_integration",t:"single",q:"A mandatory rule must apply to records updated from forms, Import Sets, and web services. Which option is best?",
+ o:["UI Policy","Data Policy","onChange Client Script","Form Design"],
+ a:1, e:"Use a Data Policy because it enforces data consistency on the server across multiple entry methods. UI Policies and Client Scripts run in the browser and can be bypassed by imports or APIs."},
+
+{d:"migration_integration",t:"single",q:"A client script needs a server-calculated value while the user is still on the form. Which pattern best fits?",
+ o:["Direct GlideRecord in the client script","GlideAjax calling a client-callable Script Include","After Business Rule only","Update Set Preview"],
+ a:1, e:"Use GlideAjax with a client-callable Script Include. The Client Script runs in the browser, while the Script Include runs on the server and returns only the needed value."},
+
+{d:"migration_integration",t:"single",q:"A script must query many Incident records and update related records after a user saves a Change Request. Where should that logic run?",
+ o:["Client Script in the browser","Business Rule on the server","UI Policy on the form","Catalog UI Policy"],
+ a:1, e:"Database queries and related-record updates belong on the server in a Business Rule or other server-side artifact. Client Scripts should not perform heavy database work in the browser."},
+
+{d:"migration_integration",t:"single",q:"A field on the form must be pre-populated based on information from the logged-in user's department as soon as the form opens. Which Client Script timing is most appropriate?",
+ o:["onLoad","onChange","onSubmit","onCellEdit"],
+ a:0, e:"Use onLoad when the behavior should run as the form loads. onChange waits for a field change, onSubmit waits for save, and onCellEdit is for list editing."},
+
+{d:"migration_integration",t:"single",q:"A script should validate a field only when Priority changes, not when any other field changes or when the form is submitted. Which Client Script timing fits?",
+ o:["onLoad","onChange","onSubmit","Display Business Rule"],
+ a:1, e:"Use onChange because the trigger is a specific field value change. onSubmit validates at save time, while Display Business Rules run on the server before form display."},
+
+{d:"migration_integration",t:"single",q:"A user edits State directly from a list cell and a client-side validation should run for that list edit. Which Client Script type applies?",
+ o:["onLoad","onChange","onSubmit","onCellEdit"],
+ a:3, e:"Use onCellEdit for client-side logic triggered by list cell edits. onChange applies to form field changes, not inline list editing."},
+
+{d:"migration_integration",t:"single",q:"A script should enrich a form with server-side data before the form renders and make that value available to client scripts without another round trip. Which option fits?",
+ o:["Display Business Rule with g_scratchpad","After Business Rule","onSubmit Client Script","Async Business Rule"],
+ a:0, e:"A Display Business Rule runs on the server before the form is sent to the browser and can populate g_scratchpad for Client Scripts. After and Async rules run after database operations, not before display."},
+
+{d:"migration_integration",t:"single",q:"A non-critical integration call should happen after an Incident update, but the form should return quickly for the user. Which Business Rule timing is best?",
+ o:["Before","Display","Async","onChange"],
+ a:2, e:"Use an Async Business Rule for background server-side work after the database operation. It avoids making the user wait for non-critical follow-up processing."},
+
+{d:"migration_integration",t:"single",q:"A calculated field value must be written to the current record before it is saved. Which Business Rule timing is best?",
+ o:["Before","After","Async","Display"],
+ a:0, e:"Use a Before Business Rule because it can modify current before the database write. After and Async run after the save, and Display is for form-load data preparation."},
+
+{d:"migration_integration",t:"single",q:"A related audit record should be created only after the current record has successfully been inserted. Which Business Rule timing is best?",
+ o:["Before","After","Display","onLoad"],
+ a:1, e:"Use an After Business Rule because the current record already exists in the database. This is useful when related work depends on a successful insert or update."},
+
+{d:"migration_integration",t:"single",q:"Why is a Client Script usually the wrong choice for enforcing critical data integrity rules?",
+ o:["Client Scripts cannot read field values","Client Scripts run only in the browser and can be bypassed by imports, integrations, or server-side updates","Client Scripts only run after Business Rules","Client Scripts cannot show messages"],
+ a:1, e:"Client Scripts are browser-side behavior. Critical data integrity should be enforced server-side with Data Policies, Business Rules, ACLs, or validation logic that applies outside the form."},
+
+{d:"migration_integration",t:"single",q:"Why is a Business Rule usually the wrong choice for simply hiding or showing a field while the user changes values on a form?",
+ o:["Business Rules cannot access records","Business Rules run on the server and do not provide immediate browser UI behavior while the user edits the form","Business Rules only work in Service Portal","Business Rules require Update Sets"],
+ a:1, e:"Business Rules execute server-side around database operations or form display. Immediate show/hide behavior while editing is better handled by UI Policies or Client Scripts in the browser."},
+
+{d:"migration_integration",t:"single",q:"A form interaction should happen without a page refresh and without writing anything to the database. Which execution context should you think of first?",
+ o:["Browser/client side","Database server only","Update Set preview","Transform Map"],
+ a:0, e:"If the user experience changes immediately without saving, think browser/client side first: UI Policy or Client Script. Server-side artifacts are for database, security, integration, or cross-entry-point logic."},
+
+{d:"migration_integration",t:"single",q:"A rule must behave the same for records created from the UI, REST API, and Import Sets. Which execution context should you think of first?",
+ o:["Browser/client side","Server side","Dashboard widget","Report Designer"],
+ a:1, e:"If the rule must apply across UI, API, and imports, think server side first. Business Rules and Data Policies run on the server; Client Scripts and UI Policies are browser-focused."},
+
+{d:"migration_integration",t:"single",q:"A developer wants to stop an onChange script from running its logic during initial form load. Which check is commonly used?",
+ o:["if (isLoading) return;","if (current.isNewRecord()) return;","if (!previous) return;","if (action.setRedirectURL()) return;"],
+ a:0, e:"Use if (isLoading) return; in onChange Client Scripts so the logic does not fire while the form is initializing existing field values."},
+
+{d:"migration_integration",t:"single",q:"A Client Script and a Business Rule both seem able to solve a requirement. Which question best helps choose between them?",
+ o:["Does the logic need to run in the user's browser immediately, or must it run server-side for all ways data enters the platform?","Which one has the shorter name?","Which one appears higher in the Application Navigator?","Can the logic be exported to PDF?"],
+ a:0, e:"This is the key exam distinction: use Client Scripts for immediate browser behavior, and Business Rules for server-side logic that applies consistently to database operations and integrations."},
 
 ]; // end QUESTIONS array
 
