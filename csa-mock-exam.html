@@ -298,7 +298,7 @@
       </div>
       <div class="info-box">
         <div class="label">Question Pool</div>
-        <div class="value">289</div>
+        <div class="value">320</div>
       </div>
       <div class="info-box">
         <div class="label">Domains</div>
@@ -376,7 +376,7 @@
 
 <script>
 // =============================================================================
-// QUESTION BANK — 289 Questions across 6 CSA domains
+// QUESTION BANK — 320 Questions across 6 CSA domains
 // Domains: platform_overview | instance_config | collaboration |
 //          self_service | database_security | migration_integration
 // Types: "single" | "multi"
@@ -1575,6 +1575,132 @@ const QUESTIONS = [
 {d:"migration_integration",t:"single",q:"Regarding the Automated Test Framework (ATF), which statement is correct?",
  o:["ATF is enabled by default on all ServiceNow instances","ATF is only available on production instances","The ATF system property is disabled by default and should only be enabled on non-production instances","ATF runs automatically after every Update Set commit on any instance"],
  a:2, e:"The ATF system property is disabled by default and should only be enabled on non-production instances to prevent unintended test execution in production."},
+
+// --- NEW: table-list mnemonics and scenario-based scripting practice (+31) ---
+
+{d:"instance_config",t:"single",q:"Which direct list URL opens System Properties in ServiceNow?",
+ o:["sys_property.list","sys_properties.list","sys_properties.do","system_properties.list"],
+ a:1, e:"System Properties are stored in the sys_properties table, so sys_properties.list opens the direct list view."},
+
+{d:"migration_integration",t:"single",q:"Which direct list URL opens Business Rules?",
+ o:["sys_business_rule.list","sys_rule.list","sys_script.list","business_rule.list"],
+ a:2, e:"Business Rules are records on the sys_script table, so sys_script.list opens the Business Rules list."},
+
+{d:"migration_integration",t:"single",q:"Which direct list URL opens Client Scripts?",
+ o:["sys_client_script.list","sys_script_client.list","client_script.list","sys_ui_script.list"],
+ a:1, e:"Client Scripts are stored on sys_script_client, so sys_script_client.list opens the Client Scripts list."},
+
+{d:"migration_integration",t:"single",q:"Which direct list URL opens UI Policies?",
+ o:["sys_ui_policy.list","sys_policy_ui.list","ui_policy.list","sys_client_policy.list"],
+ a:0, e:"UI Policies are stored on the sys_ui_policy table."},
+
+{d:"migration_integration",t:"single",q:"Which direct list URL opens UI Actions?",
+ o:["sys_ui_action.list","sys_action_ui.list","ui_action.list","sys_script_action.list"],
+ a:0, e:"UI Actions are stored on the sys_ui_action table."},
+
+{d:"database_security",t:"single",q:"Which direct list URL opens the table definition records for ServiceNow tables?",
+ o:["sys_table.list","sys_db_object.list","sys_dictionary.list","sys_object_table.list"],
+ a:1, e:"ServiceNow table definitions are stored in sys_db_object. Field definitions are stored in sys_dictionary."},
+
+{d:"database_security",t:"single",q:"Which direct list URL opens field dictionary entries?",
+ o:["sys_db_object.list","sys_field.list","sys_dictionary.list","sys_element.list"],
+ a:2, e:"The System Dictionary is the sys_dictionary table and contains field-level metadata."},
+
+{d:"database_security",t:"single",q:"Which direct list URL opens Access Control Rules?",
+ o:["sys_security_acl.list","sys_acl.list","access_control.list","sys_access_control.list"],
+ a:0, e:"Access Control Rules are records on sys_security_acl."},
+
+{d:"instance_config",t:"single",q:"Which direct list URL opens user records?",
+ o:["sys_users.list","sys_user.list","user.list","sys_user_record.list"],
+ a:1, e:"User records are stored on the sys_user table."},
+
+{d:"instance_config",t:"single",q:"Which direct list URL opens group records?",
+ o:["sys_group.list","sys_user_group.list","user_group.list","sys_groups.list"],
+ a:1, e:"Group records are stored on sys_user_group."},
+
+{d:"instance_config",t:"single",q:"Which direct list URL opens role records?",
+ o:["sys_role.list","sys_user_role.list","user_role.list","sys_roles.list"],
+ a:1, e:"Role records are stored on sys_user_role."},
+
+{d:"self_service",t:"single",q:"Which direct list URL opens Catalog Items?",
+ o:["catalog_item.list","sc_cat_item.list","sc_catalog_item.list","sys_cat_item.list"],
+ a:1, e:"Catalog Items are stored on sc_cat_item."},
+
+{d:"self_service",t:"single",q:"Which direct list URL opens Requested Items (RITMs)?",
+ o:["sc_req_item.list","sc_request_item.list","request_item.list","sc_ritm.list"],
+ a:0, e:"Requested Items are stored on sc_req_item."},
+
+{d:"self_service",t:"single",q:"Which direct list URL opens Catalog Tasks?",
+ o:["catalog_task.list","sc_task.list","sctask.list","sc_catalog_task.list"],
+ a:1, e:"Catalog Tasks are stored on sc_task."},
+
+{d:"self_service",t:"single",q:"Which direct list URL opens Knowledge Articles?",
+ o:["knowledge.list","kb_article.list","kb_knowledge.list","sys_knowledge.list"],
+ a:2, e:"Knowledge Articles are stored on kb_knowledge."},
+
+{d:"migration_integration",t:"single",q:"Which direct list URL opens Local Update Sets?",
+ o:["sys_update_set.list","sys_update_xml.list","update_set.list","sys_remote_update_set.list"],
+ a:0, e:"Local Update Set records are stored on sys_update_set. Individual captured changes are stored on sys_update_xml."},
+
+{d:"migration_integration",t:"single",q:"Which direct list URL opens the individual customer update records captured by Update Sets?",
+ o:["sys_update_set.list","sys_update_xml.list","sys_customer_update.list","update_xml.list"],
+ a:1, e:"Captured configuration changes are customer update records stored on sys_update_xml."},
+
+{d:"migration_integration",t:"single",q:"A field value must be validated before the user can submit the form, and the user should see the message immediately in the browser. Which artifact is best?",
+ o:["Before Business Rule","onSubmit Client Script","After Business Rule","Scheduled Script Execution"],
+ a:1, e:"Use an onSubmit Client Script when validation must happen in the browser before the form submits."},
+
+{d:"migration_integration",t:"single",q:"When should you choose an onChange Client Script instead of an onSubmit Client Script?",
+ o:["When logic must run only after the record is inserted","When logic should react immediately when a specific field value changes","When logic must run for REST imports too","When logic must update related records server-side"],
+ a:1, e:"An onChange Client Script runs as soon as a watched field changes, making it useful for immediate form behavior or validation."},
+
+{d:"migration_integration",t:"single",q:"A form should automatically show the 'Subcategory' field only after a user selects a Category. The behavior does not require custom code. What should you use?",
+ o:["UI Policy","Before Business Rule","Script Include","Transform Map"],
+ a:0, e:"Use a UI Policy for no-code client-side form behavior such as show/hide, mandatory, or read-only."},
+
+{d:"migration_integration",t:"single",q:"A rule must set the Assignment Group before an Incident is written to the database, regardless of whether the record came from a form, import, or API. What should you use?",
+ o:["onLoad Client Script","Before Business Rule","UI Policy","Catalog Client Script"],
+ a:1, e:"Use a Before Business Rule for server-side changes that must apply consistently before database save."},
+
+{d:"migration_integration",t:"single",q:"A record has already been saved and now a related notification or integration action should run without changing the saved values. Which Business Rule timing is most appropriate?",
+ o:["Before","After","Display","onChange"],
+ a:1, e:"After Business Rules run after the database operation and are suited for follow-up work that depends on the saved record."},
+
+{d:"migration_integration",t:"single",q:"A server-side value must be calculated before the form displays and then made available to Client Scripts through g_scratchpad. Which Business Rule timing should be used?",
+ o:["Before","After","Async","Display"],
+ a:3, e:"Display Business Rules run before a form is displayed and commonly populate g_scratchpad for client-side scripts."},
+
+{d:"migration_integration",t:"single",q:"A heavy server-side follow-up process should run after a record update, but the user should not wait for it before the form returns. Which Business Rule timing fits best?",
+ o:["Before","After","Async","Display"],
+ a:2, e:"Async Business Rules run in the background after the database action, avoiding extra wait time for the user."},
+
+{d:"migration_integration",t:"single",q:"Which choice correctly maps where Client Scripts and Business Rules execute?",
+ o:["Client Scripts run on the server; Business Rules run in the browser","Both run in the browser","Client Scripts run in the browser; Business Rules run on the server","Both run only after database commit"],
+ a:2, e:"Client Scripts execute in the user's browser. Business Rules execute on the ServiceNow server."},
+
+{d:"migration_integration",t:"single",q:"A mandatory field rule must be enforced for records created from forms, Import Sets, and web services. Which artifact is best?",
+ o:["UI Policy","Data Policy","onChange Client Script","Form Template"],
+ a:1, e:"Data Policies enforce data rules on the server across all entry methods, including UI, imports, and web services."},
+
+{d:"migration_integration",t:"single",q:"Which artifact is best for reusable server-side JavaScript that multiple Business Rules can call?",
+ o:["Client Script","Script Include","UI Policy","Form Template"],
+ a:1, e:"Script Includes are reusable server-side JavaScript libraries callable from Business Rules and other server-side scripts."},
+
+{d:"migration_integration",t:"single",q:"A developer needs to query Incident records from server-side JavaScript. Which API should they use?",
+ o:["g_form","GlideRecord","GlideAjax only","document.querySelector"],
+ a:1, e:"GlideRecord is the main server-side API for querying and updating ServiceNow table records."},
+
+{d:"migration_integration",t:"single",q:"A Client Script needs data from the server without reloading the form. Which pattern is normally used?",
+ o:["GlideRecord directly in the browser","GlideAjax calling a client-callable Script Include","Before Business Rule with current.update()","Scheduled Script Execution"],
+ a:1, e:"GlideAjax lets a Client Script call a client-callable Script Include to retrieve server-side data safely."},
+
+{d:"migration_integration",t:"single",q:"Why is direct GlideRecord use in Client Scripts discouraged or blocked in modern ServiceNow?",
+ o:["It only works on mobile","It exposes server-side data access to the browser and can harm performance/security","It cannot read reference fields","It only supports insert operations"],
+ a:1, e:"Client-side GlideRecord exposes data access in the browser and can cause performance and security problems. Use GlideAjax or server-side logic instead."},
+
+{d:"migration_integration",t:"single",q:"In an onChange Client Script, why is an 'if (isLoading) return;' guard commonly used?",
+ o:["To stop the script from running during form load when field values are being initialized","To make the script server-side","To force the form to save before validation","To disable all field changes"],
+ a:0, e:"onChange scripts can fire while the form is loading and fields are initialized. The isLoading guard prevents unintended logic during initial load."},
 
 ]; // end QUESTIONS array
 
