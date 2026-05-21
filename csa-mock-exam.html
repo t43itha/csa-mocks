@@ -298,7 +298,7 @@
       </div>
       <div class="info-box">
         <div class="label">Question Pool</div>
-        <div class="value">233</div>
+        <div class="value">289</div>
       </div>
       <div class="info-box">
         <div class="label">Domains</div>
@@ -376,7 +376,7 @@
 
 <script>
 // =============================================================================
-// QUESTION BANK — 200 Questions across 6 CSA domains
+// QUESTION BANK — 289 Questions across 6 CSA domains
 // Domains: platform_overview | instance_config | collaboration |
 //          self_service | database_security | migration_integration
 // Types: "single" | "multi"
@@ -1345,6 +1345,236 @@ const QUESTIONS = [
 {d:"migration_integration",t:"single",q:"What are the correct steps to retrieve and apply an Update Set from another instance?",
  o:["Verify Complete, Retrieve, Preview, Apply","Verify Complete, Test Connection, Apply","Verify Complete, Test Connection, Commit","Verify Complete, Retrieve, Preview, Commit"],
  a:3, e:"The correct Update Set promotion flow is: verify it is Complete → Retrieve → Preview (check conflicts) → Commit (apply)."},
+
+// --- NEW: from Cram flashcards (LD1 / LD2 / LD5 / LD6) ---
+
+// PLATFORM OVERVIEW additions (+12)
+{d:"platform_overview",t:"single",q:"Who founded ServiceNow?",
+ o:["Fred Luddy","Bill McDermott","Larry Ellison","Marc Benioff"],
+ a:0, e:"Fred Luddy founded ServiceNow. Bill McDermott is the current CEO."},
+
+{d:"platform_overview",t:"single",q:"Who is the current CEO of ServiceNow?",
+ o:["Fred Luddy","Satya Nadella","Bill McDermott","Marc Benioff"],
+ a:2, e:"Bill McDermott has been CEO of ServiceNow since 2019. Fred Luddy is the founder."},
+
+{d:"platform_overview",t:"single",q:"ServiceNow is described as an aPaaS platform. What does aPaaS stand for?",
+ o:["Automated Platform as a Service","Application Platform as a Service","Advanced PaaS Solution","API Platform as a Service"],
+ a:1, e:"aPaaS stands for Application Platform-as-a-Service, meaning the application is hosted in the cloud and companies don't need to manage the underlying hardware."},
+
+{d:"platform_overview",t:"multi",q:"Which of the following are the 4 base workflows available within the ServiceNow platform? (Select 4)",
+ o:["IT Workflows","Employee Workflows","Customer Workflows","Creator Workflows","Security Workflows"],
+ a:[0,1,2,3], e:"The 4 base workflows are IT Workflows, Employee Workflows, Customer Workflows, and Creator Workflows."},
+
+{d:"platform_overview",t:"multi",q:"Which of the following are the 4 interfaces you can interact with in the ServiceNow platform? (Select 4)",
+ o:["The Next Experience (Unified Navigation)","Now Mobile App","Service Portal","Employee Center","Developer Studio"],
+ a:[0,1,2,3], e:"The 4 interfaces are: The Next Experience (Unified Navigation), Now Mobile App, Service Portal, and Employee Center."},
+
+{d:"platform_overview",t:"single",q:"What is the 'Contextual app pill' in ServiceNow's Unified Navigation header?",
+ o:["A button that launches the Service Catalog","A bubble in the center of the navigation header that reminds you where you are inside the platform","A script include used for context-aware API calls","A dashboard analytics widget"],
+ a:1, e:"The Contextual app pill is the 'bubble' in the center of the navigation header whose purpose is to remind you where you are inside the platform."},
+
+{d:"platform_overview",t:"multi",q:"Which 2 roles are required to impersonate other users in ServiceNow? (Select 2)",
+ o:["admin","impersonator","security_admin","itil","approver_user"],
+ a:[0,1], e:"Both the 'admin' and 'impersonator' roles are required to impersonate other users in ServiceNow."},
+
+{d:"platform_overview",t:"single",q:"What system property must be set to 'true' to record impersonation events in the System Log?",
+ o:["glide.ui.log_impersonation","glide.sys.log_impersonation","glide.security.impersonation_log","sys.admin.log_impersonation"],
+ a:1, e:"The property 'glide.sys.log_impersonation' must be set to true to see impersonation events in the System Log."},
+
+{d:"platform_overview",t:"single",q:"When an admin uses 'Elevate Role', which role does it elevate to?",
+ o:["itil","approver_user","security_admin","catalog_admin"],
+ a:2, e:"Elevate Role elevates the admin to 'security_admin', which allows modification of ACL (Access Control Lists)."},
+
+{d:"platform_overview",t:"multi",q:"Under the User Preferences menu, which 3 global preference types can you customize? (Select 3)",
+ o:["Display","Accessibility","Notifications","Security","Theme"],
+ a:[0,1,2], e:"User Preferences allows customization of Display, Accessibility, and Notifications settings."},
+
+{d:"platform_overview",t:"single",q:"What is the difference between 'Update' and 'Submit' when saving a record in ServiceNow?",
+ o:["They are identical","Update saves an existing record and returns to the previous page; Submit saves a NEW record and returns to the previous page","Update creates a new record; Submit updates an existing one","Update saves without navigating away; Submit always opens a new blank form"],
+ a:1, e:"Update saves an existing record and returns to the previous page. Submit saves a NEW record and returns to the previous page. Save (right-click header) saves the record and stays on the current page."},
+
+{d:"platform_overview",t:"multi",q:"Which 2 fields are mandatory when creating an Incident in ServiceNow? (Select 2)",
+ o:["Caller","Short Description","Priority","Category","Assignment Group"],
+ a:[0,1], e:"The only 2 mandatory fields for Incident creation are Caller and Short Description."},
+
+// INSTANCE CONFIG additions (+7)
+{d:"instance_config",t:"single",q:"What is a 'baseline implementation' in ServiceNow?",
+ o:["A custom application built from scratch","A set of installed applications on an instance prior to any configuration or customization","A fully configured production environment ready to go live","A backup copy of the instance taken before upgrades"],
+ a:1, e:"A baseline implementation is the set of installed applications on an instance prior to any configuration or customization."},
+
+{d:"instance_config",t:"single",q:"What system property must be set to 'true' to enable the dark theme in ServiceNow?",
+ o:["glide.ui.dark_mode","glide.ui.polaris.dark_themes_enabled","system.ui.theme_dark","glide.ui.enable_dark_theme"],
+ a:1, e:"The property 'glide.ui.polaris.dark_themes_enabled' must be activated and set to true to enable the dark theme."},
+
+{d:"instance_config",t:"single",q:"Users in ServiceNow are represented by records on which table?",
+ o:["sys_user_group","sys_user_role","sys_user","sys_admin_user"],
+ a:2, e:"Users are represented by records on the sys_user table (User [sys_user])."},
+
+{d:"instance_config",t:"single",q:"Groups in ServiceNow are represented by records on which table?",
+ o:["sys_user","sys_group","sys_user_group","sys_group_admin"],
+ a:2, e:"Groups are represented by records on the sys_user_group table (Group [sys_user_group])."},
+
+{d:"instance_config",t:"single",q:"Roles in ServiceNow are represented by records on which table?",
+ o:["sys_user","sys_user_group","sys_role","sys_user_role"],
+ a:3, e:"Roles are represented by records on the sys_user_role table. A role is a collection of permissions defining user access to applications and the actions they can take."},
+
+{d:"instance_config",t:"single",q:"Which 2 application areas does the System Administrator role NOT include by default?",
+ o:["ITSM and Change Management","HR and Security Operations","Knowledge Management and Service Catalog","Incident and Problem Management"],
+ a:1, e:"The System Administrator role has almost all roles with two exceptions: HR and Security Operations, which require separate specialized administrator roles."},
+
+{d:"instance_config",t:"single",q:"What is the best practice for assigning roles to users in ServiceNow?",
+ o:["Assign roles directly to each individual user for precision","Create a group matching the required role, assign the role to the group, then add users to the group","Create individual role records for each user","Use UI Policies to restrict access instead of roles"],
+ a:1, e:"Best practice is to create a group matching the required role, assign the role to the group, then add users to the group — rather than assigning roles directly to individual users."},
+
+// DATABASE SECURITY additions (+18)
+{d:"database_security",t:"single",q:"What is a sys_id in ServiceNow?",
+ o:["A 16-character unique record identifier","A 32-character globally unique identifier automatically assigned to every record","The system administrator's login username","A reference field that links two tables together"],
+ a:1, e:"The sys_id is a 32-character, globally unique identifier (GUID) that is automatically assigned to every record in ServiceNow."},
+
+{d:"database_security",t:"single",q:"Every field in a ServiceNow record has 3 key attributes. Which set correctly identifies all 3?",
+ o:["ID, Type, Value","Label, Name, Value","Key, Column, Data","Field, Table, Record"],
+ a:1, e:"Every field has: Label (user-friendly name, e.g. 'Last Name'), Name (system name, e.g. 'last_name'), and Value (actual data, e.g. 'Smith')."},
+
+{d:"database_security",t:"single",q:"What is a 'Glide List' field type in ServiceNow?",
+ o:["A field that displays a single dropdown of choices","A field that allows selecting multiple records from a table (e.g. the Watchlist field on Incident selecting multiple Users)","A field that links to any single record in any table in the instance","A calculated field that executes a script to return a value"],
+ a:1, e:"A Glide List field allows selecting multiple records from a table defined by the glide list. For example, the Incident Watchlist field is a Glide List referencing the User table."},
+
+{d:"database_security",t:"multi",q:"Which of the following are the 4 ways tables can be related to each other in ServiceNow? (Select 4)",
+ o:["One-to-Many","Many-to-Many","Database Views","Extensions","Cross-instance joins"],
+ a:[0,1,2,3], e:"The 4 table relationship types are: One-to-Many, Many-to-Many, Database Views, and Extensions."},
+
+{d:"database_security",t:"multi",q:"Which of the following are the 3 table extension models supported in the Now Platform? (Select 3)",
+ o:["Table per class","Table per hierarchy","Table per partition","Table per schema","Table per tenant"],
+ a:[0,1,2], e:"The 3 extension models are: Table per class, Table per hierarchy, and Table per partition."},
+
+{d:"database_security",t:"single",q:"What is the difference between a 'core' table and a 'base' table in ServiceNow?",
+ o:["Core tables are custom; base tables ship with ServiceNow","Core tables exist in the ServiceNow base system and can have parent/child relationships; base tables have no parent but can have child (extension) relationships","Base tables are created by admins only; core tables are read-only","They are interchangeable terms for the same concept"],
+ a:1, e:"A core table exists in the ServiceNow base system and can be both a parent and a child. A base table is a core table that has no parent — it sits at the top of its hierarchy. The Task table is both core and base."},
+
+{d:"database_security",t:"multi",q:"Which 3 of the following characteristics apply to the 'Task' table? (Select 3)",
+ o:["Core table — comes with ServiceNow base system","Base table — has no parent table","Parent table — has child tables (Incident, Problem, Change)","Child table — extends another table","External table — lives outside ServiceNow"],
+ a:[0,1,2], e:"The Task table is: (1) a core table, (2) a base table (no parent), and (3) a parent table with children like Incident, Problem, and Change Request."},
+
+{d:"database_security",t:"single",q:"When creating a new custom table inside a scoped application, what prefix is added to the table name?",
+ o:["_u (created in global scope)","_x (created in scoped application)","_c (custom)","_s (scoped)"],
+ a:1, e:"Tables created in a scoped application are prefixed with '_x'. Tables created in an unscoped (global) application are prefixed with '_u'."},
+
+{d:"database_security",t:"single",q:"What is a Schema Map in ServiceNow used for?",
+ o:["Documenting Update Set changes before migration","Providing a graphical representation of tables and their relationships to a specific table","Mapping source fields to target fields during data import","Displaying active Access Control Rules for a table"],
+ a:1, e:"The Schema Map provides a graphic representation of other tables related to a specific table, showing relationships like extensions and references."},
+
+{d:"database_security",t:"single",q:"What is the shortcut in the Filter Navigator to access the Access Controls associated with a specific table?",
+ o:["Type '.acl' and press Enter","Type '.security' in the navigator","Type '.config' in the navigator and select the Access Controls tab","Type 'acl_table' in the search bar"],
+ a:2, e:"Typing '.config' in the Filter Navigator opens a configuration menu where you can select the Access Controls tab to view ACLs for the current table."},
+
+{d:"database_security",t:"single",q:"When a custom table is created in ServiceNow, how many access control rules are automatically generated by the system?",
+ o:["1 — read only","2 — read and write","3 — create, read, write","4 — create, delete, read, write"],
+ a:3, e:"When a custom table is created, the system automatically generates 4 ACL rules: create, delete, read, and write. A role is also automatically created and associated with these rules."},
+
+{d:"database_security",t:"single",q:"If a user fails a TABLE-level ACL rule, what happens to their access to individual fields in that table?",
+ o:["They can still access fields for which they have explicit field-level ACL permissions","They are denied access to ALL fields in the table — even if they would pass individual field ACL rules","They get read-only access to all fields","Only mandatory fields are hidden from the user"],
+ a:1, e:"If a user fails a table ACL rule, they are denied access to ALL fields in the table — even if they would pass individual field-level ACL rules."},
+
+{d:"database_security",t:"single",q:"What is the purpose of a 'coalesce' field in an Import Set transform map?",
+ o:["It merges two import tables together before transformation","It acts as a unique key during imports — if a matching record is found, it updates it rather than creating a duplicate","It formats date/time fields during import","It maps multiple source fields to a single target field"],
+ a:1, e:"A coalesced field acts as a unique key during data imports. If a matching record is found on the target table, the existing record is updated rather than creating a new duplicate record."},
+
+{d:"database_security",t:"multi",q:"Which 3 are the key system tables related to CMDB in ServiceNow? (Select 3)",
+ o:["cmdb","cmdb_ci","cmdb_rel_ci","cmdb_relationship","ci_class_manager"],
+ a:[0,1,2], e:"The 3 key CMDB system tables are: cmdb, cmdb_ci (Configuration Items), and cmdb_rel_ci (CI Relationships)."},
+
+{d:"database_security",t:"single",q:"What does CSDM stand for and what is its purpose in ServiceNow?",
+ o:["Common System Data Model — organizes system properties","Common Service Data Model — a CMDB-based framework identifying where to place data for the products you are using","Configured Service Delivery Module — a module for service delivery workflows","Custom Schema Design Manager — a tool for designing database schemas"],
+ a:1, e:"CSDM stands for Common Service Data Model. It is a CMDB-based framework that identifies where to place data for the ServiceNow products you are using."},
+
+{d:"database_security",t:"single",q:"What role, other than 'admin', allows a user to manage all aspects of Import Sets?",
+ o:["import_user","import_manager","import_admin","itil"],
+ a:2, e:"The 'import_admin' role (in addition to 'admin') allows a user to manage all aspects of Import Sets in ServiceNow."},
+
+{d:"database_security",t:"single",q:"What is the purpose of the 'Automatic Mapping Utility' when setting up a transform map?",
+ o:["It uses AI to suggest the most likely field mappings","The simplest method — automatically maps fields when Import Set field names exactly match the Target table field names","It automatically creates the Target table if it doesn't exist","It imports data without requiring any transform map configuration"],
+ a:1, e:"The Automatic Mapping Utility is the simplest mapping method — it maps fields automatically when the Import Set field names exactly match the names of the fields on the Target table."},
+
+{d:"database_security",t:"single",q:"In the correct sequence, what are the steps when handling data through an Import Set?",
+ o:["Transform Map → Data Source → Import Table → Target Table","Import Table → Data Source → Transform Map → Target Table","Data Source → Import Table → Transform Map → Target Table","Data Source → Transform Map → Import Table → Target Table"],
+ a:2, e:"The correct sequence is: Data Source → Import Table (staging area) → Transform Map (mapping guide) → Target Table."},
+
+{d:"database_security",t:"single",q:"What path in the All menu allows you to access the System Dictionary in ServiceNow?",
+ o:["All > System Security > Dictionary","All > System Definition > Dictionary","All > System Properties > Dictionary","All > System UI > Dictionary"],
+ a:1, e:"The System Dictionary is accessed at All > System Definition > Dictionary. It contains the definition for every table and field in the database."},
+
+// MIGRATION INTEGRATION additions (+17)
+{d:"migration_integration",t:"single",q:"What is the correct path data takes from the user's browser to the ServiceNow database?",
+ o:["Web Browser → ServiceNow Database → Application Server → Internet","Internet → Web Browser → Application Server → ServiceNow Database","Web Browser → Internet → Application Server → ServiceNow Database","Application Server → Internet → Web Browser → ServiceNow Database"],
+ a:2, e:"The correct path is: Web Browser → Internet → Application Server → ServiceNow Database."},
+
+{d:"migration_integration",t:"single",q:"On which side do UI Policies execute in ServiceNow?",
+ o:["Server side","Client side","Both client and server simultaneously","Neither — they are purely declarative configuration"],
+ a:1, e:"UI Policies execute on the client side, dynamically changing form behavior in the user's browser."},
+
+{d:"migration_integration",t:"single",q:"What is the key difference between a UI Policy and a Data Policy in ServiceNow?",
+ o:["UI Policies run on the server; Data Policies run on the client","UI Policies only enforce rules through the form UI; Data Policies are enforced on ALL data entering the platform including Import Sets and Web Services","UI Policies can make fields mandatory; Data Policies cannot","Data Policies are only used for reporting and analytics"],
+ a:1, e:"UI Policies only enforce rules on data entered via a form in the UI. Data Policies enforce rules on ALL data entering the platform — form, Import Sets, or Web Services."},
+
+{d:"migration_integration",t:"single",q:"A Data Policy executes on the server side. In addition, it can also run as what?",
+ o:["A Business Rule","A UI Policy on the client side","An ACL rule","A scheduled job"],
+ a:1, e:"A Data Policy executes on the server side but can also be configured to run as a UI Policy on the client side, giving it dual enforcement."},
+
+{d:"migration_integration",t:"single",q:"What is a UI Action in ServiceNow?",
+ o:["A scheduled job that triggers automatically","An element that adds buttons, links, and context menu items on forms and lists","A rule that changes field visibility based on conditions","A client-side script that executes when a form loads"],
+ a:1, e:"A UI Action adds buttons, links, and context menu items on forms and lists. Examples include 'Resolve', 'Approve', or custom action buttons."},
+
+{d:"migration_integration",t:"single",q:"Which checkbox must be selected for a UI Action to be visible and interactive to users?",
+ o:["Published","Enabled","Active","Visible"],
+ a:2, e:"The 'Active' checkbox must be selected for a UI Action to be visible and interactive to the user."},
+
+{d:"migration_integration",t:"multi",q:"Which of the following are the 4 types of client scripts in ServiceNow? (Select 4)",
+ o:["onCellEdit() — runs when a list cell changes value","onChange() — runs when a specific field changes value","onLoad() — runs when a form is loaded","onSubmit() — runs when a form is submitted","onSave() — runs when a record is saved to the database"],
+ a:[0,1,2,3], e:"The 4 client script types are: onCellEdit(), onChange(), onLoad(), and onSubmit(). There is no native 'onSave()' client script type."},
+
+{d:"migration_integration",t:"multi",q:"What are the 4 'When' timing options available in a Business Rule? (Select 4)",
+ o:["Before — before a record is saved to the database","After — after a record is saved to the database","Async — queued; client and server work independently","Display — before the record is displayed to the user","Schedule — runs on a time-based schedule"],
+ a:[0,1,2,3], e:"The 4 Business Rule 'When' options are: Before, After, Async (queued), and Display (before the record is displayed). There is no 'Schedule' option — that is a Scheduled Job."},
+
+{d:"migration_integration",t:"single",q:"What is the primary difference between a Business Rule and a Client Script in ServiceNow?",
+ o:["Business Rules only run on forms; Client Scripts run on the server","A Client Script only executes on the client (typically forms); a Business Rule executes on the server and applies consistently regardless of how data is accessed","Business Rules are used for notifications only; Client Scripts handle UI changes","They are identical — different naming conventions for the same artifact"],
+ a:1, e:"A Client Script executes on the client side (browser, typically forms). A Business Rule executes on the server and is applied consistently regardless of how data enters the platform — not limited to form interactions."},
+
+{d:"migration_integration",t:"single",q:"What should you always consider BEFORE implementing a Business Rule in ServiceNow?",
+ o:["Whether the user has the correct role","Whether you can accomplish the same goal using Flow Designer","Whether the table has existing ACLs","Whether an Update Set is currently active"],
+ a:1, e:"Best practice: always consider whether you can accomplish the same goal using Flow Designer before implementing a Business Rule."},
+
+{d:"migration_integration",t:"single",q:"What file format is an Update Set stored in when exported?",
+ o:["JSON","CSV","XML","YAML"],
+ a:2, e:"Update Sets are stored and exported in XML format."},
+
+{d:"migration_integration",t:"single",q:"Which table do Update Set configuration changes get written to?",
+ o:["sys_update_set","sys_config_update","sys_update_xml","sys_update_record"],
+ a:2, e:"Update Set changes from tracked tables are written to the sys_update_xml table."},
+
+{d:"migration_integration",t:"single",q:"Update Sets capture 'Process' records but NOT 'Data' records. Which of the following is a Process record captured by an Update Set?",
+ o:["Incident tickets","User records in sys_user","Business Rules and Client Scripts","CMDB configuration items"],
+ a:2, e:"Update Sets capture Process records like Business Rules, Client Scripts, Fields, Forms, Tables, Views, Roles, and Workflows. They do NOT capture Data records like incidents, user records, or CIs."},
+
+{d:"migration_integration",t:"single",q:"What is a 'batch update set' in ServiceNow?",
+ o:["An automated import of large data volumes","A way to group multiple Update Sets together so they can be previewed and committed in bulk","A scheduled update set that deploys at a set time","A merged single Update Set combining all recent changes"],
+ a:1, e:"A batch update set allows you to group multiple Update Sets together so you can preview and commit them in bulk, avoiding ordering errors or omissions."},
+
+{d:"migration_integration",t:"single",q:"What is the recommended maximum number of records ServiceNow suggests keeping within a single Update Set?",
+ o:["50","100","500","1,000"],
+ a:1, e:"ServiceNow recommends not exceeding 100 records within a single Update Set."},
+
+{d:"migration_integration",t:"single",q:"Once an Update Set is marked 'Complete', what should you NEVER do?",
+ o:["Retrieve it from another instance","Change it back to 'In Progress' to add more updates","Preview it before committing to the target","Commit it alongside other Update Sets in a batch"],
+ a:1, e:"Once an Update Set is marked Complete, you should NEVER change it back to In Progress. If more changes are needed, create a new Update Set and commit both together."},
+
+{d:"migration_integration",t:"single",q:"What is the purpose of 'previewing' a retrieved Update Set before committing?",
+ o:["To check the file size of the Update Set","To compare the retrieved Update Set against local instance updates and detect potential problems or conflicts","To automatically resolve all detected conflicts","To run automated tests against the incoming changes"],
+ a:1, e:"Previewing compares the retrieved Update Set from a remote instance to updates on the local instance to detect potential problems or conflicts before committing."},
+
+{d:"migration_integration",t:"single",q:"Regarding the Automated Test Framework (ATF), which statement is correct?",
+ o:["ATF is enabled by default on all ServiceNow instances","ATF is only available on production instances","The ATF system property is disabled by default and should only be enabled on non-production instances","ATF runs automatically after every Update Set commit on any instance"],
+ a:2, e:"The ATF system property is disabled by default and should only be enabled on non-production instances to prevent unintended test execution in production."},
 
 ]; // end QUESTIONS array
 
