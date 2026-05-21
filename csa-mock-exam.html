@@ -306,7 +306,7 @@
       </div>
     </div>
     <p style="font-size:.9rem;color:#666;margin-bottom:16px;text-align:center;">
-      Each attempt selects 60 questions at random (weighted by domain). No going back — just like the real exam.
+      Each attempt selects 60 questions at random, weighted to the current CSA blueprint (7/10/20/20/30/13). No going back — just like the real exam.
     </p>
     <label class="timer-toggle">
       <input type="checkbox" id="timer-toggle" />
@@ -376,7 +376,7 @@
 
 <script>
 // =============================================================================
-// QUESTION BANK — 370 Questions across 6 CSA domains
+// QUESTION BANK — 370 Questions across 6 current CSA blueprint domains
 // Domains: platform_overview | instance_config | collaboration |
 //          self_service | database_security | migration_integration
 // Types: "single" | "multi"
@@ -385,7 +385,7 @@
 const QUESTIONS = [
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DOMAIN 1: Platform Overview & Navigation  (14 questions)
+// DOMAIN 1: Platform Overview and Navigation — 7% blueprint / 4 of 60 selected / 26 in pool
 // ─────────────────────────────────────────────────────────────────────────────
 {d:"platform_overview",t:"single",q:"What does the ServiceNow platform primarily run on?",
  o:["Python and Django","Java-based server with JavaScript scripting","Ruby on Rails","PHP and MySQL"],
@@ -444,7 +444,7 @@ const QUESTIONS = [
  a:1, e:"Scoped applications use a unique application scope (namespace) to prevent naming conflicts and protect customizations."},
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DOMAIN 2: Instance Configuration  (20 questions)
+// DOMAIN 2: Instance Configuration — 10% blueprint / 6 of 60 selected / 34 in pool
 // ─────────────────────────────────────────────────────────────────────────────
 {d:"instance_config",t:"single",q:"Where are ServiceNow system properties configured?",
  o:["System Definition > Tables","System Properties > All Properties","User Administration > Roles","System Update Sets"],
@@ -527,7 +527,7 @@ const QUESTIONS = [
  a:[1,2], e:"Non-admin users can add favorites and personalize their own list columns without affecting other users."},
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DOMAIN 3: Configuring Applications for Collaboration  (40 questions)
+// DOMAIN 3: Configuring Applications for Collaboration — 20% blueprint / 12 of 60 selected / 68 in pool
 // ─────────────────────────────────────────────────────────────────────────────
 {d:"collaboration",t:"single",q:"Which module displays tasks assigned to a user's group but not yet assigned to an individual?",
  o:["My Teams Work","My Groups Work","My Groups Tasks","My Unassigned Work"],
@@ -686,7 +686,7 @@ const QUESTIONS = [
  a:1, e:"Dot-walking lets you traverse table relationships using dot notation to access fields on referenced records."},
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DOMAIN 4: Self-Service & Automation  (40 questions)
+// DOMAIN 4: Self Service & Automation — 20% blueprint / 12 of 60 selected / 63 in pool
 // ─────────────────────────────────────────────────────────────────────────────
 {d:"self_service",t:"single",q:"What is the primary purpose of the ServiceNow Knowledge Base?",
  o:["Storing scripts","Providing searchable articles to help users resolve issues without contacting IT","Managing hardware assets","Storing email templates"],
@@ -849,7 +849,7 @@ const QUESTIONS = [
  a:1, e:"Always on Top keeps the Virtual Agent chat bubble visible as users scroll, encouraging engagement."},
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DOMAIN 5: Database Management & Platform Security  (60 questions)
+// DOMAIN 5: Database Management and Platform Security — 30% blueprint / 18 of 60 selected / 93 in pool
 // ─────────────────────────────────────────────────────────────────────────────
 {d:"database_security",t:"single",q:"What is the ServiceNow System Dictionary (sys_dictionary)?",
  o:["A list of installed applications","The metadata repository defining all table columns and their properties","A catalog of scripts","A list of user roles"],
@@ -1060,7 +1060,7 @@ const QUESTIONS = [
  a:1, e:"SIR manages the lifecycle of security incidents including investigation, containment, and remediation."},
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DOMAIN 6: Data Migration & Integration  (26 questions)
+// DOMAIN 6: Data Migration and Integration — 13% blueprint / 8 of 60 selected / 86 in pool
 // ─────────────────────────────────────────────────────────────────────────────
 {d:"migration_integration",t:"single",q:"What is a 'UI Policy' in ServiceNow?",
  o:["A rule controlling user interface behavior (show/hide, mandatory, read-only) of fields on a form","A security policy for the user interface","An email template policy","A workflow trigger"],
@@ -1820,9 +1820,9 @@ const QUESTIONS = [
  o:["AMB","Database","Instance View","Slow Pattern","Knowledge Base"],
  a:[0,1,2,3], e:"The notes list available graph sets including AMB, Database, Instance View, MySQL Global Status, ServiceNow Servlet, and Slow Pattern."},
 
-{d:"collaboration",t:"multi",q:"Which stages are part of the basic Change Request process in the study notes? (Select 4)",
+{d:"collaboration",t:"multi",q:"Which stages are commonly part of a task-based Change workflow and support the current blueprint's Task Management topic? (Select 4)",
  o:["Creation and Scope","Approval","Implementation","Closure","Retirement"],
- a:[0,1,2,3], e:"The basic Change Request process includes Creation and Scope, Approval, Implementation, and Closure."},
+ a:[0,1,2,3], e:"Creation and Scope, Approval, Implementation, and Closure are common stages in a task-based Change workflow. This maps to the current CSA blueprint under Configuring Applications for Collaboration > Task Management."},
 
 // --- NEW: scripting 'why' and execution-context scenarios (+20) ---
 
@@ -1912,12 +1912,12 @@ const QUESTIONS = [
 // DOMAIN METADATA
 // =============================================================================
 const DOMAINS = {
-  platform_overview:      { label: "Platform Overview & Navigation",        color: "#4a90d9", examCount: 4  },
-  instance_config:        { label: "Instance Configuration",                color: "#7b68ee", examCount: 6  },
-  collaboration:          { label: "Configuring Apps for Collaboration",     color: "#e8834a", examCount: 12 },
-  self_service:           { label: "Self-Service & Automation",              color: "#50b86c", examCount: 12 },
-  database_security:      { label: "Database Management & Security",         color: "#e84a6a", examCount: 18 },
-  migration_integration:  { label: "Data Migration & Integration",           color: "#f4a623", examCount: 8  },
+  platform_overview:      { label: "Platform Overview and Navigation",        color: "#4a90d9", examCount: 4  },
+  instance_config:        { label: "Instance Configuration",                  color: "#7b68ee", examCount: 6  },
+  collaboration:          { label: "Configuring Applications for Collaboration", color: "#e8834a", examCount: 12 },
+  self_service:           { label: "Self Service & Automation",               color: "#50b86c", examCount: 12 },
+  database_security:      { label: "Database Management and Platform Security", color: "#e84a6a", examCount: 18 },
+  migration_integration:  { label: "Data Migration and Integration",          color: "#f4a623", examCount: 8  },
 };
 
 // =============================================================================
