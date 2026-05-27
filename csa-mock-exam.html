@@ -395,9 +395,9 @@ const QUESTIONS = [
  o:["A shared multi-tenant database","A dedicated, single-tenant cloud environment","An on-premise software installation","A virtual machine template"],
  a:1, e:"Each ServiceNow customer receives a dedicated single-tenant instance in the cloud."},
 
-{d:"platform_overview",t:"single",q:"Which URL suffix is used to access the ServiceNow admin application navigator?",
- o:["/ui","/?","/$","nav_to.do?"],
- a:2, e:"The $ or nav_to.do suffix opens the classic Application Navigator."},
+{d:"platform_overview",t:"multi",q:"Which URL suffixes or routing prefixes can be used to access the classic ServiceNow admin UI from a modern instance? (Select 2)",
+ o:["/ui","/$","/nav_to.do?uri=","/now/nav/ui/classic/params/target/"],
+ a:[2,3], e:"Use /nav_to.do?uri= for traditional classic UI routing, or /now/nav/ui/classic/params/target/ to bridge from Next Experience into the classic core UI."},
 
 {d:"platform_overview",t:"single",q:"What is the primary navigation framework for ServiceNow's modern UI?",
  o:["CMS Portal","Service Portal","Next Experience Unified Navigation","Angular Navigator"],
@@ -516,7 +516,7 @@ const QUESTIONS = [
 
 {d:"instance_config",t:"single",q:"An administrator wants to prevent a field from appearing on a form for users without a specific role. Which tool should they use?",
  o:["Business Rule","UI Policy","Client Script","ACL"],
- a:1, e:"UI Policies can show/hide fields based on conditions including roles. For security-level hiding, ACLs are better."},
+ a:3, e:"Use a field-level read ACL when access to a field must be secured by role. UI Policies can hide fields on forms, but they do not enforce security across lists, APIs, or other access paths."},
 
 {d:"instance_config",t:"single",q:"Where in ServiceNow would you configure the maximum session timeout for all users?",
  o:["System Properties > Security","User Administration > Sessions","System Definition > Plugins","Module Editor"],
@@ -561,17 +561,17 @@ const QUESTIONS = [
  o:["Ctrl+S","Clicking the Save button","Right-clicking and selecting Save","All of the above"],
  a:3, e:"Records can be saved via keyboard shortcut, the Save button, or through the right-click context menu."},
 
-{d:"collaboration",t:"single",q:"What does 'Insert and Stay' do when saving a record?",
- o:["Saves the record and returns to the list","Saves the current record and opens a new blank record","Saves the record and keeps the form open on the current record","Duplicates the record"],
- a:2, e:"'Save' (formerly 'Update') keeps you on the same record after saving. 'Insert and Stay' creates a new record keeping the form open."},
+{d:"collaboration",t:"single",q:"What does 'Insert and Stay' do when creating a record?",
+ o:["Inserts a new record and returns to the list","Inserts a new record and keeps the form open on the newly created record","Updates the current record and opens a new blank form","Duplicates the record without saving it"],
+ a:1, e:"Insert and Stay creates the new record and keeps you on that newly inserted record instead of returning to the previous list or page."},
 
 {d:"collaboration",t:"single",q:"What is a Visual Task Board (VTB) in ServiceNow?",
  o:["A kanban-style board for managing and visualizing task workflow","A Gantt chart for project planning","A dashboard for performance metrics","A form for creating tasks"],
  a:0, e:"Visual Task Boards (VTBs) provide a kanban-style lane-based view for managing tasks and their workflow states."},
 
 {d:"collaboration",t:"single",q:"What are the three types of Visual Task Boards?",
- o:["Personal, Group, and Freeform","Public, Private, and Shared","Static, Dynamic, and Guided","Fixed, Flexible, and Free"],
- a:0, e:"VTBs come in three types: Personal (user-created), Group (team-shared), and Freeform (flexible, not data-driven)."},
+ o:["Freeform, Flexible, and Guided","Personal, Group, and Public","Static, Dynamic, and Guided","Fixed, Flexible, and Shared"],
+ a:0, e:"The three Visual Task Board types are Freeform, Flexible, and Guided. Personal and group describe board ownership or sharing, not the board type."},
 
 {d:"collaboration",t:"single",q:"What is the primary purpose of a ServiceNow Dashboard?",
  o:["Running server-side scripts","Displaying multiple reports and performance indicators in a single configurable view","Managing user roles","Configuring email notifications"],
@@ -733,8 +733,8 @@ const QUESTIONS = [
  a:1, e:"A REQ represents the shopping cart/order, and each RITM represents an individual item within that order."},
 
 {d:"self_service",t:"single",q:"What is 'Workflow Studio' in ServiceNow?",
- o:["A legacy workflow editor","The modern name for Flow Designer, used to build automated workflows","A reporting tool","A UI Builder tool"],
- a:1, e:"Workflow Studio is the modern interface that includes Flow Designer for building no-code/low-code automations."},
+ o:["A legacy workflow editor","A modern automation workspace that includes Flow Designer and related automation tools","A reporting tool","A UI Builder tool"],
+ a:1, e:"Workflow Studio is broader than a simple rename of Flow Designer; it is the modern workspace for building and managing automation capabilities."},
 
 {d:"self_service",t:"single",q:"What is 'Flow Designer' in ServiceNow?",
  o:["A diagramming tool for network flows","A no-code/low-code automation tool for building flows with triggers, actions, and conditions","A UI design tool","A script editor"],
@@ -796,9 +796,9 @@ const QUESTIONS = [
  o:["A single knowledge article","A repository that groups related knowledge articles together","A help desk team","A reporting database"],
  a:1, e:"A Knowledge Base is a container that groups related knowledge articles, each KB having its own access controls."},
 
-{d:"self_service",t:"single",q:"What does the 'Can Read' knowledge base role control?",
+{d:"self_service",t:"single",q:"What does the 'Can Read' knowledge base access setting control?",
  o:["Who can create articles","Who can read/view articles within that knowledge base","Who can approve articles","Who can delete the KB"],
- a:1, e:"'Can Read' defines which users or roles can view articles in the knowledge base."},
+ a:1, e:"The Can Read access setting uses user criteria to define who can view articles in the knowledge base."},
 
 {d:"self_service",t:"single",q:"What is an 'Inbound Action' in ServiceNow?",
  o:["A Flow Designer trigger","A rule that processes incoming email and can create or update records based on content","An API endpoint","A catalog fulfillment step"],
@@ -959,9 +959,9 @@ const QUESTIONS = [
  o:["FTP","SAML 2.0","SMTP","REST"],
  a:1, e:"SAML 2.0 (Security Assertion Markup Language) is the most common SSO protocol used with ServiceNow."},
 
-{d:"database_security",t:"multi",q:"Which of the following are types of ACL operations that can be secured? (Select 3)",
- o:["read","write","create","execute","deploy"],
- a:[0,1,2], e:"ACLs can protect read, write, and create operations (along with delete and others). 'execute' and 'deploy' are not standard ACL operations."},
+{d:"database_security",t:"multi",q:"Which of the following are common table ACL operations that can be secured? (Select 4)",
+ o:["read","write","create","delete","deploy"],
+ a:[0,1,2,3], e:"Common table ACL operations include create, read, write, and delete. Deploy is not a standard table ACL operation."},
 
 {d:"database_security",t:"single",q:"What is the purpose of 'Encryption' in ServiceNow?",
  o:["Speeding up database queries","Protecting sensitive data by encoding it so only authorized parties can read it","Compressing attachments","Securing network connections"],
@@ -973,15 +973,15 @@ const QUESTIONS = [
 
 {d:"database_security",t:"single",q:"What is the 'Field Watcher' in ServiceNow used for?",
  o:["Monitoring field-level changes on a record for debugging purposes","Notifying users when a specific field changes","Both of the above","Neither of the above"],
- a:2, e:"Field Watcher monitors field changes in real-time, useful for both debugging and triggering notifications."},
+ a:0, e:"Field Watcher is a diagnostic/debugging tool for monitoring field-level changes on a form. It does not itself send notifications."},
 
 {d:"database_security",t:"single",q:"What is 'Automated Test Framework (ATF)' used for in ServiceNow?",
  o:["Automating user provisioning","Creating and running automated tests to validate configurations without manual testing","Load testing the instance","Testing email notifications"],
  a:1, e:"ATF lets admins create automated test suites to validate platform configurations, scripts, and workflows."},
 
 {d:"database_security",t:"single",q:"What does 'table rotation' mean in ServiceNow?",
- o:["Renaming a table periodically","Archiving old records from a table to a separate archive table to manage size","Changing the table's primary key","Rotating encryption keys"],
- a:1, e:"Table rotation archives old records to keep active tables lean and performant."},
+ o:["Renaming a table periodically","Splitting very large table data into rotated physical table extensions or partitions, often by time period","Changing the table's primary key","Rotating encryption keys"],
+ a:1, e:"Table rotation separates high-volume table data into rotated physical tables or partitions. Data Archiving is the feature that moves older records to archive tables."},
 
 {d:"database_security",t:"single",q:"What is an 'Impersonation' audit log used for?",
  o:["Tracking when admins impersonate users for compliance and security review","Storing user passwords","Managing role assignments","Monitoring network access"],
@@ -995,9 +995,9 @@ const QUESTIONS = [
  o:["Excel/CSV file upload via Import Sets","Direct SQL injection","REST API data import","Drag-and-drop from desktop","Manual entry only"],
  a:[0,2], e:"Data can be imported via file upload (Excel/CSV) through Import Sets or via REST API integrations."},
 
-{d:"database_security",t:"multi",q:"Which of the following are TRUE about Access Control Lists (ACLs)? (Select 3)",
+{d:"database_security",t:"multi",q:"Which of the following are TRUE about Access Control Lists (ACLs)? (Select 4)",
  o:["ACLs can be applied at the field level","ACLs can contain scripts for complex conditions","The 'admin' role bypasses most ACLs","ACLs replace Business Rules","ACLs are stored in the sys_security_acl table"],
- a:[0,1,2], e:"ACLs support field-level protection, scripted conditions, and the admin role bypasses most ACL checks."},
+ a:[0,1,2,4], e:"ACLs support field-level protection, scripted conditions, admin bypass for most ACL checks, and are stored in the sys_security_acl table."},
 
 {d:"database_security",t:"single",q:"What does the 'High Security Plugin' do in ServiceNow?",
  o:["Enables encryption for all fields","Enforces stricter platform security settings including enhanced ACL checking","Activates a web application firewall","Enables two-factor authentication"],
@@ -1036,8 +1036,8 @@ const QUESTIONS = [
  a:1, e:"Work Notes are internal notes visible only to agents; Additional Comments are customer-facing."},
 
 {d:"database_security",t:"multi",q:"Which of the following are true about table extension in ServiceNow? (Select 3)",
- o:["Child tables inherit all parent table fields","You can extend any existing table","Extending creates a physical separate table in the database","Parent records can be viewed from the child table","Child-only fields appear on both parent and child forms"],
- a:[0,1,3], e:"Child tables inherit parent fields, any table can be extended, and parent records are accessible from child views."},
+ o:["Child tables inherit fields from their parent table","Only tables marked as extensible can be extended","Child records can be viewed from parent table lists","Parent records are always visible from child table lists","Child-only fields appear on both parent and child forms"],
+ a:[0,1,2], e:"A child table inherits parent fields, only extensible tables can be extended, and parent table lists can include records from child tables. Child-specific fields do not automatically appear on parent forms."},
 
 {d:"database_security",t:"single",q:"Which module would you use to view all tables in a ServiceNow instance?",
  o:["System Properties","System Definition > Tables","Studio","Module Editor"],
@@ -1052,8 +1052,8 @@ const QUESTIONS = [
  a:1, e:"When auditing is enabled on a table, ServiceNow records every field change with old value, new value, user, and timestamp."},
 
 {d:"database_security",t:"multi",q:"Which of the following are standard CMDB CI class types? (Select 2)",
- o:["cmdb_ci_server","cmdb_ci_application","cmdb_knowledge","cmdb_user","cmdb_sla"],
- a:[0,1], e:"cmdb_ci_server and cmdb_ci_application are standard CI classes extending the base cmdb_ci table."},
+ o:["cmdb_ci_server","cmdb_ci_appl","cmdb_knowledge","cmdb_user","cmdb_sla"],
+ a:[0,1], e:"cmdb_ci_server and cmdb_ci_appl are standard CI classes extending the base cmdb_ci table."},
 
 {d:"database_security",t:"single",q:"What does the 'Security Incident Response' (SIR) application manage?",
  o:["ITSM incidents","Security-specific incidents such as breaches, phishing, and intrusion events","Change management","CMDB updates"],
@@ -1142,9 +1142,9 @@ const QUESTIONS = [
  o:["SELECT * FROM incident","var gr = new GlideRecord('incident'); gr.addQuery('state', 1); gr.query();","GET /api/now/table/incident","incident.query()"],
  a:1, e:"GlideRecord queries use JavaScript: instantiate with table name, add conditions with addQuery(), then call query()."},
 
-{d:"migration_integration",t:"multi",q:"Which of the following are valid Business Rule 'When' settings? (Select 3)",
+{d:"migration_integration",t:"multi",q:"Which of the following are valid Business Rule 'When' settings? (Select 4)",
  o:["before","after","async","display","on_delete"],
- a:[0,1,2], e:"Business Rules can run before, after, or async relative to the database operation. 'display' is also valid for Display BRs."},
+ a:[0,1,2,3], e:"Business Rules can run before, after, async, or display. on_delete is an operation condition, not a 'When' timing option."},
 
 {d:"migration_integration",t:"single",q:"What is an 'Outbound REST Message' in ServiceNow?",
  o:["An email template","A configuration for making HTTP requests from ServiceNow to an external REST endpoint","An inbound webhook","A table export"],
@@ -1184,9 +1184,9 @@ const QUESTIONS = [
  o:["Runs aggregate database queries (COUNT, SUM, AVG) efficiently without loading full records","Creates aggregated dashboards","Combines multiple tables","Runs client-side aggregations"],
  a:0, e:"GlideAggregate is optimized for aggregate queries — it's far more efficient than iterating GlideRecord for counts/sums."},
 
-{d:"database_security",t:"single",q:"What is the maximum length of the standard 'String' field type in ServiceNow by default?",
+{d:"database_security",t:"single",q:"What is the maximum length supported by a standard String field in ServiceNow?",
  o:["100 characters","255 characters","500 characters","4000 characters"],
- a:1, e:"The default String field type in ServiceNow stores up to 255 characters. Use 'String (Long)' or 'Large Text' for more."},
+ a:3, e:"A standard String field can be configured up to 4000 characters. For larger text blocks, use a long text or large text field type."},
 
 {d:"database_security",t:"single",q:"What does a 'Boolean' field type store in ServiceNow?",
  o:["A number between 0 and 100","A true/false (yes/no) value, displayed as a checkbox","A list of choices","A date and time"],
@@ -1235,12 +1235,12 @@ const QUESTIONS = [
  a:[0,4], e:"Grouping can be done via the list header context menu (Group By) or by right-clicking the column title and selecting Group By."},
 
 {d:"collaboration",t:"multi",q:"You are viewing a list of Active Incidents and want to exclude records with a state of 'Resolved'. Which two methods would work? (Select 2)",
- o:["On Search, type not Resolved and press Enter","On the State column title, right-click and select Filter Out > Resolved","On the list, right-click a Resolved value and select Filter Out","On the list, right-click a Resolved value and select Exclude","Click Funnel icon, select Resolved, is Not, State, Run"],
- a:[1,2], e:"You can filter out a value by right-clicking the column header (Filter Out) or by right-clicking the cell value in the list."},
+ o:["On Search, type not Resolved and press Enter","On the State column title, right-click and select Filter Out > Resolved","On the list, right-click a Resolved value and select Filter Out","On the list, right-click a Resolved value and select Exclude","Click the funnel icon, set State is not Resolved, and run the filter"],
+ a:[2,4], e:"You can exclude a value by right-clicking the matching cell value and choosing Filter Out, or by using the condition builder to set State is not Resolved."},
 
 {d:"collaboration",t:"single",q:"On a filter condition builder, what is the element called that is based on the table, user access rights, and columns on the table?",
  o:["Label","Column","Data Element","Field","Attribute"],
- a:1, e:"In the condition builder, the field selector element (driven by table structure and user access) is called the Column."},
+ a:3, e:"Filter conditions are built from Field, Operator, and Value. The first selector is the Field selector, even though fields are backed by table columns."},
 
 {d:"collaboration",t:"single",q:"What module do you use to access reports that are available to you in ServiceNow?",
  o:["Self-Service > My Reports","Self-Service > My Dashboards","Reports > View / Run","Reports > Homepage","Reports > Overview"],
@@ -1331,11 +1331,11 @@ const QUESTIONS = [
 
 {d:"instance_config",t:"multi",q:"What are the main components of the Form Design interface? (Select 3)",
  o:["Field Layout","Page Header","Field Navigator","Field Picker","Form Layout"],
- a:[0,2,3], e:"The Form Designer interface consists of the Field Layout (canvas), Field Navigator (field browser), and Field Picker (available fields)."},
+ a:[1,2,4], e:"The main Form Designer components are the Page Header, Field Navigator, and Form Layout."},
 
 {d:"instance_config",t:"single",q:"You are editing an incident and want the 'Save' button to appear on the Form header. What action enables this?",
  o:["Context Menu > Form Design > add the Save button","All > System Properties > UI Properties > Turn on the glide.ui.advanced property","All > System Properties > UI Properties > Turn on the Save button","Context Menu > Form Layout > add the Save button"],
- a:1, e:"The Save button on the form header is controlled by the 'glide.ui.advanced' system property under UI Properties."},
+ a:2, e:"The form header Save button is controlled from UI Properties by enabling the Save button setting, backed by the glide.ui.show_form_save system property."},
 
 // --- migration_integration ---
 {d:"migration_integration",t:"single",q:"What is a 'Dictionary Override' in ServiceNow?",
@@ -1373,9 +1373,9 @@ const QUESTIONS = [
  o:["A button that launches the Service Catalog","A bubble in the center of the navigation header that reminds you where you are inside the platform","A script include used for context-aware API calls","A dashboard analytics widget"],
  a:1, e:"The Contextual app pill is the 'bubble' in the center of the navigation header whose purpose is to remind you where you are inside the platform."},
 
-{d:"platform_overview",t:"multi",q:"Which 2 roles are required to impersonate other users in ServiceNow? (Select 2)",
+{d:"platform_overview",t:"multi",q:"Which 2 roles can allow a user to impersonate other users in ServiceNow? (Select 2)",
  o:["admin","impersonator","security_admin","itil","approver_user"],
- a:[0,1], e:"Both the 'admin' and 'impersonator' roles are required to impersonate other users in ServiceNow."},
+ a:[0,1], e:"Users with the admin role can impersonate, and users with the impersonator role can be granted impersonation capability without full admin access. They are not both jointly required."},
 
 {d:"platform_overview",t:"single",q:"What system property must be set to 'true' to record impersonation events in the System Log?",
  o:["glide.ui.log_impersonation","glide.sys.log_impersonation","glide.security.impersonation_log","sys.admin.log_impersonation"],
@@ -1456,16 +1456,16 @@ const QUESTIONS = [
  a:[0,1,2], e:"The Task table is: (1) a core table, (2) a base table (no parent), and (3) a parent table with children like Incident, Problem, and Change Request."},
 
 {d:"database_security",t:"single",q:"When creating a new custom table inside a scoped application, what prefix is added to the table name?",
- o:["_u (created in global scope)","_x (created in scoped application)","_c (custom)","_s (scoped)"],
- a:1, e:"Tables created in a scoped application are prefixed with '_x'. Tables created in an unscoped (global) application are prefixed with '_u'."},
+ o:["u_ (created in global scope)","x_ (created in scoped application)","c_ (custom)","s_ (scoped)"],
+ a:1, e:"Tables created in a scoped application use an x_ application scope prefix. Tables created in the global scope use the u_ custom table prefix."},
 
 {d:"database_security",t:"single",q:"What is a Schema Map in ServiceNow used for?",
  o:["Documenting Update Set changes before migration","Providing a graphical representation of tables and their relationships to a specific table","Mapping source fields to target fields during data import","Displaying active Access Control Rules for a table"],
  a:1, e:"The Schema Map provides a graphic representation of other tables related to a specific table, showing relationships like extensions and references."},
 
 {d:"database_security",t:"single",q:"What is the shortcut in the Filter Navigator to access the Access Controls associated with a specific table?",
- o:["Type '.acl' and press Enter","Type '.security' in the navigator","Type '.config' in the navigator and select the Access Controls tab","Type 'acl_table' in the search bar"],
- a:2, e:"Typing '.config' in the Filter Navigator opens a configuration menu where you can select the Access Controls tab to view ACLs for the current table."},
+ o:["Type 'table_name.CONFIG' such as 'incident.CONFIG' and select the Access Controls tab","Type '.security' in the navigator","Type '.config' alone in the navigator","Type 'acl_table' in the search bar"],
+ a:0, e:"The table configuration shortcut uses the table name plus .CONFIG, such as incident.CONFIG, then the Access Controls tab shows ACLs for that table."},
 
 {d:"database_security",t:"single",q:"When a custom table is created in ServiceNow, how many access control rules are automatically generated by the system?",
  o:["1 — read only","2 — read and write","3 — create, read, write","4 — create, delete, read, write"],
@@ -1573,8 +1573,8 @@ const QUESTIONS = [
  a:1, e:"Previewing compares the retrieved Update Set from a remote instance to updates on the local instance to detect potential problems or conflicts before committing."},
 
 {d:"migration_integration",t:"single",q:"Regarding the Automated Test Framework (ATF), which statement is correct?",
- o:["ATF is enabled by default on all ServiceNow instances","ATF is only available on production instances","The ATF system property is disabled by default and should only be enabled on non-production instances","ATF runs automatically after every Update Set commit on any instance"],
- a:2, e:"The ATF system property is disabled by default and should only be enabled on non-production instances to prevent unintended test execution in production."},
+ o:["ATF is enabled by default on all ServiceNow instances","ATF is only available on production instances","ATF is primarily intended for sub-production validation, and production use should be controlled carefully","ATF runs automatically after every Update Set commit on any instance"],
+ a:2, e:"ATF is used to create and run automated platform tests, especially in sub-production before changes move to production. Production execution should be controlled carefully."},
 
 // --- NEW: table-list mnemonics and scenario-based scripting practice (+31) ---
 
@@ -1796,9 +1796,9 @@ const QUESTIONS = [
  o:["All > Knowledge > Articles > Import Articles","All > Self-Service > Knowledge > Upload Word","All > System Import Sets > Knowledge Import","All > Knowledge > Administration > Import Word"],
  a:0, e:"Word documents can be imported into Knowledge articles from All > Knowledge > Articles > Import Articles."},
 
-{d:"self_service",t:"multi",q:"Which 3 roles are required to work with Flow Designer according to the study notes? (Select 3)",
+{d:"self_service",t:"multi",q:"Which 3 roles are associated with Flow Designer and action design capabilities? (Select 3)",
  o:["flow_designer","flow_operator","action_designer","catalog_admin","script_admin"],
- a:[0,1,2], e:"The notes list flow_designer, flow_operator, and action_designer as the roles required to work with Flow Designer."},
+ a:[0,1,2], e:"flow_designer, flow_operator, and action_designer are associated with creating, operating, or designing Flow Designer capabilities, though they are not all required for every Flow Designer task."},
 
 {d:"self_service",t:"multi",q:"Which 5 trigger types are supported in Flow Designer's diagram view? (Select 5)",
  o:["Record triggers","Date triggers","Inbound email","Service Catalog","SLA Task","Database View"],
