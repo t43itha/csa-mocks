@@ -1579,71 +1579,71 @@ const QUESTIONS = [
 // --- NEW: table-list mnemonics and scenario-based scripting practice (+31) ---
 
 {d:"instance_config",t:"single",q:"Which direct list URL opens System Properties in ServiceNow?",
- o:["sys_property.list","sys_properties.list","sys_properties.do","system_properties.list"],
- a:1, e:"System Properties are stored in the sys_properties table, so sys_properties.list opens the direct list view."},
+ o:["sys_property_list.do","sys_properties_list.do","sys_properties.do","system_properties_list.do"],
+ a:1, e:"System Properties are stored in the sys_properties table, so sys_properties_list.do opens the direct list view."},
 
 {d:"migration_integration",t:"single",q:"Which direct list URL opens Business Rules?",
- o:["sys_business_rule.list","sys_rule.list","sys_script.list","business_rule.list"],
- a:2, e:"Business Rules are records on the sys_script table, so sys_script.list opens the Business Rules list."},
+ o:["sys_business_rule_list.do","sys_rule_list.do","sys_script_list.do","business_rule_list.do"],
+ a:2, e:"Business Rules are records on the sys_script table, so sys_script_list.do opens the Business Rules list."},
 
 {d:"migration_integration",t:"single",q:"Which direct list URL opens Client Scripts?",
- o:["sys_client_script.list","sys_script_client.list","client_script.list","sys_ui_script.list"],
- a:1, e:"Client Scripts are stored on sys_script_client, so sys_script_client.list opens the Client Scripts list."},
+ o:["sys_client_script_list.do","sys_script_client_list.do","client_script_list.do","sys_ui_script_list.do"],
+ a:1, e:"Client Scripts are stored on sys_script_client, so sys_script_client_list.do opens the Client Scripts list."},
 
 {d:"migration_integration",t:"single",q:"Which direct list URL opens UI Policies?",
- o:["sys_ui_policy.list","sys_policy_ui.list","ui_policy.list","sys_client_policy.list"],
+ o:["sys_ui_policy_list.do","sys_policy_ui_list.do","ui_policy_list.do","sys_client_policy_list.do"],
  a:0, e:"UI Policies are stored on the sys_ui_policy table."},
 
 {d:"migration_integration",t:"single",q:"Which direct list URL opens UI Actions?",
- o:["sys_ui_action.list","sys_action_ui.list","ui_action.list","sys_script_action.list"],
+ o:["sys_ui_action_list.do","sys_action_ui_list.do","ui_action_list.do","sys_script_action_list.do"],
  a:0, e:"UI Actions are stored on the sys_ui_action table."},
 
 {d:"database_security",t:"single",q:"Which direct list URL opens the table definition records for ServiceNow tables?",
- o:["sys_table.list","sys_db_object.list","sys_dictionary.list","sys_object_table.list"],
+ o:["sys_table_list.do","sys_db_object_list.do","sys_dictionary_list.do","sys_object_table_list.do"],
  a:1, e:"ServiceNow table definitions are stored in sys_db_object. Field definitions are stored in sys_dictionary."},
 
 {d:"database_security",t:"single",q:"Which direct list URL opens field dictionary entries?",
- o:["sys_db_object.list","sys_field.list","sys_dictionary.list","sys_element.list"],
+ o:["sys_db_object_list.do","sys_field_list.do","sys_dictionary_list.do","sys_element_list.do"],
  a:2, e:"The System Dictionary is the sys_dictionary table and contains field-level metadata."},
 
 {d:"database_security",t:"single",q:"Which direct list URL opens Access Control Rules?",
- o:["sys_security_acl.list","sys_acl.list","access_control.list","sys_access_control.list"],
+ o:["sys_security_acl_list.do","sys_acl_list.do","access_control_list.do","sys_access_control_list.do"],
  a:0, e:"Access Control Rules are records on sys_security_acl."},
 
 {d:"instance_config",t:"single",q:"Which direct list URL opens user records?",
- o:["sys_users.list","sys_user.list","user.list","sys_user_record.list"],
+ o:["sys_users_list.do","sys_user_list.do","user_list.do","sys_user_record_list.do"],
  a:1, e:"User records are stored on the sys_user table."},
 
 {d:"instance_config",t:"single",q:"Which direct list URL opens group records?",
- o:["sys_group.list","sys_user_group.list","user_group.list","sys_groups.list"],
+ o:["sys_group_list.do","sys_user_group_list.do","user_group_list.do","sys_groups_list.do"],
  a:1, e:"Group records are stored on sys_user_group."},
 
 {d:"instance_config",t:"single",q:"Which direct list URL opens role records?",
- o:["sys_role.list","sys_user_role.list","user_role.list","sys_roles.list"],
+ o:["sys_role_list.do","sys_user_role_list.do","user_role_list.do","sys_roles_list.do"],
  a:1, e:"Role records are stored on sys_user_role."},
 
 {d:"self_service",t:"single",q:"Which direct list URL opens Catalog Items?",
- o:["catalog_item.list","sc_cat_item.list","sc_catalog_item.list","sys_cat_item.list"],
+ o:["catalog_item_list.do","sc_cat_item_list.do","sc_catalog_item_list.do","sys_cat_item_list.do"],
  a:1, e:"Catalog Items are stored on sc_cat_item."},
 
 {d:"self_service",t:"single",q:"Which direct list URL opens Requested Items (RITMs)?",
- o:["sc_req_item.list","sc_request_item.list","request_item.list","sc_ritm.list"],
+ o:["sc_req_item_list.do","sc_request_item_list.do","request_item_list.do","sc_ritm_list.do"],
  a:0, e:"Requested Items are stored on sc_req_item."},
 
 {d:"self_service",t:"single",q:"Which direct list URL opens Catalog Tasks?",
- o:["catalog_task.list","sc_task.list","sctask.list","sc_catalog_task.list"],
- a:1, e:"Catalog Tasks are stored on sc_task."},
+ o:["catalog_task_list.do","sc_task_list.do","sctask_list.do","sc_catalog_task_list.do"],
+ a:1, e:"Catalog Tasks are stored on sc_task, so sc_task_list.do opens the Catalog Tasks list."},
 
 {d:"self_service",t:"single",q:"Which direct list URL opens Knowledge Articles?",
- o:["knowledge.list","kb_article.list","kb_knowledge.list","sys_knowledge.list"],
+ o:["knowledge_list.do","kb_article_list.do","kb_knowledge_list.do","sys_knowledge_list.do"],
  a:2, e:"Knowledge Articles are stored on kb_knowledge."},
 
 {d:"migration_integration",t:"single",q:"Which direct list URL opens Local Update Sets?",
- o:["sys_update_set.list","sys_update_xml.list","update_set.list","sys_remote_update_set.list"],
+ o:["sys_update_set_list.do","sys_update_xml_list.do","update_set_list.do","sys_remote_update_set_list.do"],
  a:0, e:"Local Update Set records are stored on sys_update_set. Individual captured changes are stored on sys_update_xml."},
 
 {d:"migration_integration",t:"single",q:"Which direct list URL opens the individual customer update records captured by Update Sets?",
- o:["sys_update_set.list","sys_update_xml.list","sys_customer_update.list","update_xml.list"],
+ o:["sys_update_set_list.do","sys_update_xml_list.do","sys_customer_update_list.do","update_xml_list.do"],
  a:1, e:"Captured configuration changes are customer update records stored on sys_update_xml."},
 
 {d:"migration_integration",t:"single",q:"A field value must be validated before the user can submit the form, and the user should see the message immediately in the browser. Which artifact is best?",
