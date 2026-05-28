@@ -634,11 +634,11 @@ const QUESTIONS = [
  a:1, e:"Assignment groups are teams used to route and assign work items to the appropriate team."},
 
 {d:"collaboration",t:"single",q:"Which of the following best describes 'SLA' in ServiceNow?",
- o:["Security Level Agreement","Service Level Agreement — a time-based commitment on task response or resolution","System Log Audit","Scripted Lifecycle Action"],
+ o:["Security Level Agreement","Service Level Agreement","System Log Audit","Scripted Lifecycle Action"],
  a:1, e:"SLAs (Service Level Agreements) define time-based targets for responding to or resolving tasks."},
 
 {d:"collaboration",t:"single",q:"What happens to an SLA when a task is reassigned?",
- o:["It resets automatically","Behavior depends on SLA definition — it may pause, reset, or continue","It always pauses","It is deleted"],
+ o:["It always resets","It depends on the SLA definition","It always pauses","It is deleted"],
  a:1, e:"SLA behavior on reassignment depends on the workflow and pause/reset conditions defined in the SLA definition."},
 
 {d:"collaboration",t:"multi",q:"Which of the following are types of reports available in ServiceNow? (Select 3)",
@@ -725,7 +725,7 @@ const QUESTIONS = [
  a:2, e:"Multiple Choice, Single Line Text, and Select Box are types of catalog item variables."},
 
 {d:"self_service",t:"single",q:"What is an 'RITM' in ServiceNow?",
- o:["A type of knowledge article","A Requested Item — a child record of a Request (REQ) created for each catalog item ordered","A role in the itil module","A report template"],
+ o:["Related IT Metric","Requested Item","Request Integration Template","Role Inheritance Type Map"],
  a:1, e:"RITM (Requested Item) records are created for each catalog item within a Request (REQ)."},
 
 {d:"self_service",t:"single",q:"What is the relationship between a Request (REQ) and a Requested Item (RITM)?",
@@ -904,7 +904,7 @@ const QUESTIONS = [
  a:1, e:"A CI is any IT asset or component managed in the CMDB, such as servers, software, and network devices."},
 
 {d:"database_security",t:"single",q:"What does 'CSDM' stand for in ServiceNow?",
- o:["Customer Service Data Model","Common Service Data Model — a framework for structuring CMDB data across service layers","Configuration System Data Map","Centralized Service Delivery Methodology"],
+ o:["Customer Service Data Model","Common Service Data Model","Configuration System Data Map","Centralized Service Delivery Methodology"],
  a:1, e:"CSDM (Common Service Data Model) provides a standardized approach to structuring CMDB and service data."},
 
 {d:"database_security",t:"single",q:"Which table is the primary table for configuration items in the CMDB?",
@@ -1127,7 +1127,7 @@ const QUESTIONS = [
  a:1, e:"Scheduled Data Imports automate recurring data imports from files or services on a defined schedule."},
 
 {d:"migration_integration",t:"single",q:"What does the 'glide.script.block.client.globals' system property do?",
- o:["Blocks all client scripts","Prevents client-side scripts from accessing global scope — a security best practice","Enables script debugging","Blocks server-side scripting"],
+ o:["Blocks all client scripts from running","Limits client scripts from using global scope","Enables script debugging for client code","Blocks server-side scripts from executing"],
  a:1, e:"This property is a security hardening setting that prevents client scripts from polluting the global JavaScript scope."},
 
 {d:"migration_integration",t:"multi",q:"Which of the following are valid ways to move configurations between ServiceNow instances? (Select 2)",
@@ -1201,7 +1201,7 @@ const QUESTIONS = [
  a:[0,1,3], e:"Import Sets stage data, require Transform Maps for mapping to target tables, and support multiple file formats."},
 
 {d:"database_security",t:"single",q:"What is the purpose of 'Data Policies' in ServiceNow?",
- o:["Enforcing field rules (mandatory, read-only) across ALL interfaces — forms, APIs, and imports","Only enforcing rules on forms","Only enforcing rules on API calls","Replacing ACLs for data security"],
+ o:["Enforcing field rules across multiple data entry paths","Only enforcing rules on forms","Only enforcing rules on API calls","Replacing ACLs for data security"],
  a:0, e:"Data Policies enforce field rules across all data entry methods — unlike UI Policies which only apply to the browser form."},
 
 {d:"database_security",t:"single",q:"What is the 'Number Maintenance' module used for in ServiceNow?",
@@ -1472,11 +1472,11 @@ const QUESTIONS = [
  a:3, e:"When a custom table is created, the system automatically generates 4 ACL rules: create, delete, read, and write. A role is also automatically created and associated with these rules."},
 
 {d:"database_security",t:"single",q:"If a user fails a TABLE-level ACL rule, what happens to their access to individual fields in that table?",
- o:["They can still access fields for which they have explicit field-level ACL permissions","They are denied access to ALL fields in the table — even if they would pass individual field ACL rules","They get read-only access to all fields","Only mandatory fields are hidden from the user"],
+ o:["They can still access fields with explicit field ACL permissions","They are denied access to fields in that table","They get read-only access to all fields","Only mandatory fields are hidden from the user"],
  a:1, e:"If a user fails a table ACL rule, they are denied access to ALL fields in the table — even if they would pass individual field-level ACL rules."},
 
 {d:"database_security",t:"single",q:"What is the purpose of a 'coalesce' field in an Import Set transform map?",
- o:["It merges two import tables together before transformation","It acts as a unique key during imports — if a matching record is found, it updates it rather than creating a duplicate","It formats date/time fields during import","It maps multiple source fields to a single target field"],
+ o:["It merges two import tables together before transformation","It identifies matching target records during transformation","It formats date/time fields during import","It maps multiple source fields to a single target field"],
  a:1, e:"A coalesced field acts as a unique key during data imports. If a matching record is found on the target table, the existing record is updated rather than creating a new duplicate record."},
 
 {d:"database_security",t:"multi",q:"Which 3 are the key system tables related to CMDB in ServiceNow? (Select 3)",
@@ -1484,7 +1484,7 @@ const QUESTIONS = [
  a:[0,1,2], e:"The 3 key CMDB system tables are: cmdb, cmdb_ci (Configuration Items), and cmdb_rel_ci (CI Relationships)."},
 
 {d:"database_security",t:"single",q:"What does CSDM stand for and what is its purpose in ServiceNow?",
- o:["Common System Data Model — organizes system properties","Common Service Data Model — a CMDB-based framework identifying where to place data for the products you are using","Configured Service Delivery Module — a module for service delivery workflows","Custom Schema Design Manager — a tool for designing database schemas"],
+ o:["Common System Data Model for organizing system properties","Common Service Data Model for structuring CMDB and service data","Configured Service Delivery Module for service delivery workflows","Custom Schema Design Manager for designing database schemas"],
  a:1, e:"CSDM stands for Common Service Data Model. It is a CMDB-based framework that identifies where to place data for the ServiceNow products you are using."},
 
 {d:"database_security",t:"single",q:"What role, other than 'admin', allows a user to manage all aspects of Import Sets?",
@@ -1492,7 +1492,7 @@ const QUESTIONS = [
  a:2, e:"The 'import_admin' role (in addition to 'admin') allows a user to manage all aspects of Import Sets in ServiceNow."},
 
 {d:"database_security",t:"single",q:"What is the purpose of the 'Automatic Mapping Utility' when setting up a transform map?",
- o:["It uses AI to suggest the most likely field mappings","The simplest method — automatically maps fields when Import Set field names exactly match the Target table field names","It automatically creates the Target table if it doesn't exist","It imports data without requiring any transform map configuration"],
+ o:["It uses AI to suggest the most likely field mappings","It maps matching source and target field names automatically","It automatically creates the Target table if it doesn't exist","It imports data without requiring any transform map configuration"],
  a:1, e:"The Automatic Mapping Utility is the simplest mapping method — it maps fields automatically when the Import Set field names exactly match the names of the fields on the Target table."},
 
 {d:"database_security",t:"single",q:"In the correct sequence, what are the steps when handling data through an Import Set?",
@@ -1537,7 +1537,7 @@ const QUESTIONS = [
  a:[0,1,2,3], e:"The 4 Business Rule 'When' options are: Before, After, Async (queued), and Display (before the record is displayed). There is no 'Schedule' option — that is a Scheduled Job."},
 
 {d:"migration_integration",t:"single",q:"What is the primary difference between a Business Rule and a Client Script in ServiceNow?",
- o:["Business Rules only run on forms; Client Scripts run on the server","A Client Script only executes on the client (typically forms); a Business Rule executes on the server and applies consistently regardless of how data is accessed","Business Rules are used for notifications only; Client Scripts handle UI changes","They are identical — different naming conventions for the same artifact"],
+ o:["Business Rules run on forms; Client Scripts run on the server","Client Scripts run in the browser; Business Rules run on the server","Business Rules are used for notifications only; Client Scripts handle UI changes","They are identical names for the same artifact"],
  a:1, e:"A Client Script executes on the client side (browser, typically forms). A Business Rule executes on the server and is applied consistently regardless of how data enters the platform — not limited to form interactions."},
 
 {d:"migration_integration",t:"single",q:"What should you always consider BEFORE implementing a Business Rule in ServiceNow?",
